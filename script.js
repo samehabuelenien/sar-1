@@ -91,13 +91,14 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => animateObserver.observe(el));
 
     /* --- 6. Real Countdown Timer logic --- */
+    const daysEl = document.getElementById('days-val');
     const hoursEl = document.getElementById('hours-val');
     const minutesEl = document.getElementById('minutes-val');
     const secondsEl = document.getElementById('seconds-val');
 
     if (hoursEl && minutesEl && secondsEl) {
-        // Set an initial time duration: e.g., 12 hours, 45 mins, 30 secs
-        let totalSeconds = (12 * 3600) + (45 * 60) + 30;
+        // Starts from 2 days, 12 hours, 45 mins, 30 secs
+        let totalSeconds = (2 * 86400) + (12 * 3600) + (45 * 60) + 30;
 
         setInterval(() => {
             if (totalSeconds <= 0) {
@@ -105,10 +106,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             totalSeconds--;
 
-            const h = Math.floor(totalSeconds / 3600);
+            const d = Math.floor(totalSeconds / 86400);
+            const h = Math.floor((totalSeconds % 86400) / 3600);
             const m = Math.floor((totalSeconds % 3600) / 60);
             const s = totalSeconds % 60;
 
+            if (daysEl) daysEl.textContent = d.toString().padStart(2, '0');
             hoursEl.textContent = h.toString().padStart(2, '0');
             minutesEl.textContent = m.toString().padStart(2, '0');
             secondsEl.textContent = s.toString().padStart(2, '0');
