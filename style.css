@@ -477,6 +477,11 @@ button {
     font-size: 0.95rem;
 }
 .checkout-btn { width: 100%; }
+@media (max-width:768px) {
+    .pricing-grid {
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    }
+}
 
 @media (max-width: 1024px) {
     .plan-card.featured { transform: none; }
