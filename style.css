@@ -389,7 +389,7 @@ button {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 20px;
 }
 
@@ -477,9 +477,26 @@ button {
     font-size: 0.95rem;
 }
 .checkout-btn { width: 100%; }
-@media (min-width:320px) and (max-width:768px) {
+@media (max-width: 768px) {
     .pricing-grid {
-        grid-template-columns: repeat(auto-fit, minmax(190px, 2fr));
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr); /* Force exactly 2 columns */
+    }
+    .plan-card {
+        padding: 15px 12px;
+    }
+    .plan-features li {
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+    .amount {
+        font-size: 2.2rem;
+    }
+    .old-price {
+        font-size: 1rem;
+    }
+    .plan-duration {
+        font-size: 0.85rem;
     }
 }
 
