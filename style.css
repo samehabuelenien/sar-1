@@ -477,9 +477,9 @@ button {
     font-size: 0.95rem;
 }
 .checkout-btn { width: 100%; }
-@media (max-width:768px) {
+@media (min-width:320px) and (max-width:768px) {
     .pricing-grid {
-        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(190px, 2fr));
     }
 }
 
