@@ -417,6 +417,7 @@ button {
     border: 2px solid var(--tertiary);
     transform: scale(1.05);
     box-shadow: var(--shadow-primary);
+    margin-top: 12px;
 }
 .plan-card.tertiary:hover { transform: scale(1.05) translateY(-5px); }
 
